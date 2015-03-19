@@ -1,9 +1,11 @@
-F5 VPN Command-line client.
+# F5 VPN Command-Line Client
+
+> Connect to an F5 VPN server without using their terrible browser plugin
 
 This software allows you to connect to an F5 VPN server without using their
 browser plugin. It also has the advantage of setting up DNS properly on OSX
 systems, which the official client doesn't do. (but maybe they will in the
-future, now that they can copy the method I use).
+future, now that they can copy the method I use.)
 
 It is not supported or affiliated with F5 in any way. I actually find it rather
 sad the client they provide is so terribly poor that I had to write this in
@@ -14,23 +16,33 @@ client. The only requirement is Python 2.3.5 or later. It works on at least
 Linux and OSX systems, but porting to any similar OS should be trivial. Porting
 to Windows, on the other hand, is probably not reasonably possible.
 
-To install:
-"make install" as root.
+## Installation
 
-To run:
+    sudo make install
 
-"f5vpn-login user@host" (not as root).
+(As root)
 
-(user@host is saved for future invocations, so doesn't need to be
-specified on future invocations)
+## Usage
 
-This software is licensed under GPLv3+.
+    f5vpn-login user@host
 
-Have fun,
-James Y Knight, <foom@fuhm.net>
+(Not as root)
 
-ChangeLog
----------
+**Note:** user@host is saved for future invocations, so doesn't need to be
+specified on future invocations.
+
+## Attribution
+
+This is a copy of the `f5vpn-client` by [James Y Knight](mailto:foom@fuhm.net)
+hosted [here](https://fuhm.net/software/f5vpn-login/). The only thing that has
+been modified is this README file. (See Git revision history.)
+
+## License
+
+This software is licensed under GPLv3+. See `COPYING` for more details.
+
+## Changelog
+
 2010-10-15
  - Fix "OverrideGateway0" on non-darwin platforms: on those, pppd cowardly
    refuses to replace an existing default route. Reported by Bob Whitinger.
