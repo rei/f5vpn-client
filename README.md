@@ -33,15 +33,23 @@ specified on future invocations.
 
 ## Attribution
 
-This is a copy of the `f5vpn-client` by [James Y Knight](mailto:foom@fuhm.net)
-hosted [here](https://fuhm.net/software/f5vpn-login/). The only thing that has
-been modified is this README file. (See Git revision history.)
+This is a fork of the `f5vpn-login` project originally hosted
+[here](https://fuhm.net/software/f5vpn-login/), created by
+[James Y Knight](mailto:foom@fuhm.net)
 
 ## License
 
 This software is licensed under GPLv3+. See `COPYING` for more details.
 
 ## Changelog
+
+2015-04-19
+- Bug fix: Prevent program crash on authentication error
+
+2015-03-19
+- **[REI Engineering](https://github.com/reidev) project adoption**
+- Copy project from https://fuhm.net/software/f5vpn-login/ -> https://github.com/reidev/f5vpn-client
+- Format README to markdown
 
 2010-10-15
  - Fix "OverrideGateway0" on non-darwin platforms: on those, pppd cowardly

@@ -577,9 +577,13 @@ Content-Length: %(len)d\r
             session = sessid
 
     if session is None:
+
+        # If the response body contains red HTML text, output the error
+        # (Usually authentication errors)
         pat = re.compile('<font color=red>(.*?)</font>', re.MULTILINE)
         for match in pat.finditer(result):
-            sys.stderr.write(match + '\n')
+            err_msg = match.group(1).replace('&nbsp;', '')
+            sys.stderr.write('Error: ' + err_msg + '\n')
             return None
 
         match = re.search("(Challenge: [^<]*)", result)
