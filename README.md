@@ -18,15 +18,17 @@ to Windows, on the other hand, is probably not reasonably possible.
 
 ## Installation
 
+### 1. Build and install
+
     sudo make install
 
-(As root)
+### 2. Add bins to PATH in your `.bash_profile`
+
+    export PATH="/opt/f5vpn-login/bin:$PATH"
 
 ## Usage
 
     f5vpn-login user@host
-
-(Not as root)
 
 **Note:** user@host is saved for future invocations, so doesn't need to be
 specified on future invocations.
@@ -42,6 +44,10 @@ This is a fork of the `f5vpn-login` project originally hosted
 This software is licensed under GPLv3+. See `COPYING` for more details.
 
 ## Changelog
+
+2015-10-05
+- Update Makefile and installation instructions to support Mac OS X 10.11 which
+  disallows writing to /usr/{sbin,bin}
 
 2015-04-19
 - Bug fix: Prevent program crash on authentication error
